@@ -1,0 +1,19 @@
+const fetch = require('node-fetch');
+const category = "business";
+const apiKey = "e310ae04b4b244a5892a2ed4b35766a7";
+
+
+const load = () => {
+   
+    fetch("https://newsapi.org/v2/top-headlines?country=ma&category="+category+"&apiKey="+apiKey)
+        .then(res => res.json())
+        .then(data => {
+            data.articles.forEach(element => {
+
+                console.log(element.url)
+            })
+           
+        })
+};
+
+module.exports.load = load;
