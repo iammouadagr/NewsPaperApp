@@ -3,9 +3,12 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const app = express();
 const PORT = 3001;
-const businessApi = require("./models/businessCategory");
 const db = require('./db/dbConnection');
-const sportsApi = require('./models/sportsCategory')
+
+// API
+const businessApi = require("./models/businessCategory");
+const sportsApi = require('./models/sportsCategory');
+const entertainment = require('./models/entertainmentCategory');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.disable('etag');
@@ -23,6 +26,7 @@ app.get('/',(req, res) => {
     //Loading from API
     businessApi.load();
     sportsApi.load();
+    entertainment.load();
     
     res.send("hello world");
 });
