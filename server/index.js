@@ -33,6 +33,22 @@ app.get('/',(req, res) => {
     res.send("hello world");
 });
 
+app.get('/business',(req,res)=> {
+
+    businessApi.load();
+
+    let query ='SELECT * FROM article WHERE category LIKE "business" ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+});
+
 //Port
 app.listen(PORT,() => {
     console.log("running on port",PORT );

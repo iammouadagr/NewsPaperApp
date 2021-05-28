@@ -13,7 +13,7 @@ const load = () => {
     fetch("https://newsapi.org/v2/top-headlines?country=ma&category="+category+"&apiKey="+apiKey)
         .then(res => res.json())
         .then(data => {
-            let i=0;
+            
             data.articles.forEach(element => {
                 
                 let newArticle = new Article(element.source.name,
@@ -46,7 +46,7 @@ const load = () => {
                         console.error('Error Inserting Item: ' + err.stack);
                     }else {
                         console.log("Item Inserted ");
-                        i++;
+                        
                     }
                 });
                 
