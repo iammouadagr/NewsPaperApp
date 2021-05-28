@@ -8,7 +8,8 @@ const db = require('./db/dbConnection');
 // API
 const businessApi = require("./models/businessCategory");
 const sportsApi = require('./models/sportsCategory');
-const entertainment = require('./models/entertainmentCategory');
+const entertainmentApi = require('./models/entertainmentCategory');
+const healthApi = require('./models/healthCategory');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.disable('etag');
@@ -26,8 +27,9 @@ app.get('/',(req, res) => {
     //Loading from API
     businessApi.load();
     sportsApi.load();
-    entertainment.load();
-    
+    entertainmentApi.load();
+    healthApi.load();
+
     res.send("hello world");
 });
 
