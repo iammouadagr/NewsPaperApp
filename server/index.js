@@ -65,6 +65,22 @@ app.get('/sports',(req,res)=> {
     });
 });
 
+app.get('/entertainment',(req,res)=> {
+
+    entertainmentApi.load();
+
+    let query ='SELECT * FROM article WHERE category LIKE "entertainment" ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+});
+
 //Port
 app.listen(PORT,() => {
     console.log("running on port",PORT );
