@@ -22,7 +22,7 @@ db.connect((err) => {
 });
 
 //Routes
-app.get('/',(req, res) => {
+app.get('/breakingNews',(req, res) => {
 
     //Loading from API
     businessApi.load();
@@ -30,7 +30,17 @@ app.get('/',(req, res) => {
     entertainmentApi.load();
     healthApi.load();
 
-    res.send("hello world");
+    
+    let query ='SELECT * FROM nabaatv.article order by publishedAt DESC';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
 });
 
 app.get('/business',(req,res)=> {

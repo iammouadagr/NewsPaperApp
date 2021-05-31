@@ -1,26 +1,40 @@
 import React from 'react';
-import {Navbar, Nav, Container, NavLink} from 'react-bootstrap';
-import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
-import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
+
 
 const Navigation = () => {
     return (
-        <>
-            <Navbar collapseOnSelect fixed="top" expand='sm' bg='dark' variant='dark' >
-                <Container>
-                    <NavbarToggle aria-controls='responsive-navbar-nav' />
-                    <NavbarCollapse id='responsive-navbar-nav'>
-                        <Nav>
-                            <NavLink href ='/'>Home</NavLink>
-                            <NavLink href ='/health'>Health</NavLink>
-                            <NavLink href ='/sports'>Sports</NavLink>
-                            <NavLink href ='/entertainment'>Entertainment</NavLink>
-                            <NavLink href ='/business'>Business</NavLink>
-                        </Nav>
-                    </NavbarCollapse>
-                </Container>
-            </Navbar>
-        </>
+        <div className="menu-container" >
+        
+                <div className="container bg-dark" >
+                    <nav className="navbar navbar-toggleable-md navbar-light ">
+                        <button className="navbar-toggler navbar-toggler-right mt-3" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                            <span className="fa fa-bars"></span
+                        ></button>
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav mr-auto">
+                                <li className="nav-item ">
+                                    <a className="nav-link" href="/">Home </a>
+                                </li>
+                                <li className="nav-item ">
+                                    <a className="nav-link" href="/health">Health </a>
+                                </li>
+                                <li className="nav-item ">
+                                    <a className="nav-link" href="/sports">Sports </a>
+                                </li>
+                                <li className="nav-item ">
+                                    <a className="nav-link" href="/entertainment">Entertainment </a>
+                                </li>
+                                <li className="nav-item ">
+                                    <a className="nav-link" href="/business">Business </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        
     )
 }
 

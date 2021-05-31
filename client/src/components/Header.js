@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Headerlogo from './HeaderLogo'
+import Breaking from './BreakingNewsHeader';
+import HeaderTop from './HeaderTop'
 
 export const Header = () => {
     return (
         <header>
-            <h1>NabaaTv</h1>
+            <HeaderTop />
+            <Breaking />
+            <Headerlogo />
         </header>
     )
 }
