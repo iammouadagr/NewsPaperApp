@@ -7,6 +7,7 @@ import Entertainment from './components/Entertainment';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import { Route, Switch } from 'react-router';
+import HeadLineSection from './components/HeadLineSection'
 
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
           <Route exact path='/entertainment' component={Entertainment} />
         </Switch>
       </Navigation>
+
+
+      <HeadLineSection />
+
+      
       
     </div>
     
