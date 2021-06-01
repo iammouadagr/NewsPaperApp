@@ -107,6 +107,28 @@ app.get('/health',(req,res)=> {
     });
 });
 
+app.get('/topbreakingnews',(req,res)=> {
+
+    //Loading from API
+    businessApi.load();
+    sportsApi.load();
+    entertainmentApi.load();
+    healthApi.load();
+
+    let query ='SELECT * FROM nabaatv.article order by publishedAt DESC limit 1 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+
 
 //Port
 app.listen(PORT,() => {

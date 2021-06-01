@@ -1,6 +1,7 @@
 import React from 'react'
 import '../style/headLineSection.css'
 import img from '../480x320.jpg'; 
+import HeadlineMainSection from './HeadlineMainSection'
 
 const HeadLineSection = () => {
     return (
@@ -15,7 +16,7 @@ const HeadLineSection = () => {
                                      <i className="fa fa-clock-o"></i>&nbsp;&nbsp;Dec 31,2017
                                 </a></div>
                                 <div className="">
-                                    <a className="article-large link" href="#"> After all is said and done, more is said than done also hadsdv csdvs</a>
+                                    <HeadlineMainSection />
                                 </div>
                             </div>
                         </div>
