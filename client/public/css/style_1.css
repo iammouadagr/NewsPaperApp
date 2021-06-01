@@ -33,6 +33,9 @@
 .float-left {
   float: left;
 }
+.li {
+  list-style-type: none;
+}
 
 .breaking-news-title {
   background: #f05555;

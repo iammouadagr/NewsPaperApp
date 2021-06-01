@@ -1,41 +1,24 @@
 import React, { Component } from 'react'
+import  NewsTicker, { Directions } from 'react-advanced-news-ticker'
+
+
 
 export class BreakingNewsItems extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            Breakingnews: []
+           item : { title : props.title, url :props.url}
         }
     }
 
+
     
-
-    componentDidMount(){
-        //API
-        fetch('/breakingNews')
-        .then(res => res.json())
-        .then(data => data.map(news=>{
-           
-            this.setState(prevState => ({
-                Breakingnews: [...prevState.Breakingnews,news]
-              }));
-              console.log('Breaking news fetched', news);
-            }));
-  
-    }
-
-  
     
     render() {
         return (
-            <button>
-                {this.state.Breakingnews.map(news => {
-                    return <a className="breaking-news-link" key={news.id} href={news.url}>{news.title}</a>
-                    
-                })}
-               
-            </button>
-        )
+                <a href={this.state.item.url}>{this.state.item.title}</a>
+                        )
+
     }
 }
 

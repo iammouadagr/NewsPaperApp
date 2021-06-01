@@ -1,32 +1,78 @@
 import React, { Component } from 'react';
-import Ticker from 'react-ticker'
 import BreakingNews from './BreakingNewsItems'
+import  NewsTicker, { Directions } from 'react-advanced-news-ticker'
+import '../style/BreakingNewsSection.css'
 
 class BreakingNewsHeader extends Component {
+
+    constructor(){
+        super();
+        this.state = {
+            BreakingNews: [],
+            active : false
+        }
+    }
+
+    componentDidMount(){
+        //API
+        fetch('/breakingNews')
+        .then(res => res.json())
+        .then(data => this.setState({BreakingNews: data,active :true}))
+        .then(console.log('Breaking news fetched'));
+  
+    }
 
     
 
     render() {
-        return (
-            <div className="breaking-news-container" >
-                    <div className="container">
-                        <div className ="row">
-                            <div className="col-12">
-                                <div className="breaking-news-wrapper ">
-                                    <h5 href="#" className="breaking-news-title float-left">Breaking news</h5>
-
-                                    <Ticker offset={0} speed={5} height={40} mode={'smooth'}>
-                                        {() => <BreakingNews />}
-                                    </Ticker>
-
+        if(this.state.active) {
+            return (
+                <div className="breaking-news-container" >
+                        <div className="container">
+                            <div className ="row">
+                                <div className="col-12">
+                                    <div className="breaking-news-wrapper ">
+                                        <h5 href="#" className="breaking-news-title float-left">Breaking news</h5>
+                                        <NewsTicker
+                                            rowHeight = {20}
+                                            maxRows = {1}
+                                            speed = {550}
+                                            direction = {Directions.DOWN}
+                                            duration = {4000}
+                                            autoStart = {true}
+                                            pauseOnHover = {true}
+                                            className = "breakingNews-ul"
+                                            
+                                            >
+                                                { this.state.BreakingNews.map(singleNews=>{
+                                                            return <BreakingNews key ={singleNews.id}
+                                                            title ={singleNews.title} 
+                                                            url ={singleNews.url}  />
+                                                       })
+                                                }
+                                                
+                                                
+                                           
+                                            </NewsTicker>
+                                        
+    
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-            </div>
-
+                </div>
+    
+                
+            );
+        }
+        else {
+            return() =>
+        (<div> no news</div>)
+                
             
-        );
+        }
+        
+      
     }
 }
 
