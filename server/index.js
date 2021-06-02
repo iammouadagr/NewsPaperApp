@@ -132,11 +132,66 @@ app.get('/topbusiness',(req,res)=> {
 
     //Loading from API
     businessApi.load();
-    sportsApi.load();
-    entertainmentApi.load();
-    healthApi.load();
+    
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "business" order by publishedAt DESC limit 1 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/topsports',(req,res)=> {
+
+    //Loading from API
+    
+    sportsApi.load();
+    
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "sports" order by publishedAt DESC limit 1 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/topentertainment',(req,res)=> {
+
+    //Loading from API
+    entertainmentApi.load();
+
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "entertainment" order by publishedAt DESC limit 1 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/tophealth',(req,res)=> {
+
+    //Loading from API
+    healthApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "health" order by publishedAt DESC limit 1 ';
     db.query(query,(err,result) =>{
         if(err) {
             console.error('Error fetching data: ' + err.stack);
