@@ -27,9 +27,20 @@ export class HeadlineMainSection extends Component {
 
     render() {
         return (
-            <div>
-                <a className="article-large link" href={this.state.topNews.url}>{this.state.topNews.title}</a>
+            <div className="article-large"><img src={this.state.topNews.urlToImage} alt="img"/>
+                            
+                <div className="article-large content">
+                    <div className="">
+                        <a href="#" class="color_fff">
+                            <i className="fa fa-clock-o"></i>&nbsp;&nbsp;{Date.parse(this.state.topNews.publishedAt)}
+                        </a>
+                    </div>
+                    <div className="">
+                        <a className="article-large link" href={this.state.topNews.url}>{this.state.topNews.title}</a>
+                    </div>
+                </div>
             </div>
+            
         )
     }
 }

@@ -128,6 +128,27 @@ app.get('/topbreakingnews',(req,res)=> {
 
 });
 
+app.get('/topbusiness',(req,res)=> {
+
+    //Loading from API
+    businessApi.load();
+    sportsApi.load();
+    entertainmentApi.load();
+    healthApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "business" order by publishedAt DESC limit 1 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
 
 
 //Port
