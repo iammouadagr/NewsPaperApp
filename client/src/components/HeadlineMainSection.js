@@ -12,7 +12,7 @@ export class HeadlineMainSection extends Component {
     }
 
     componentDidMount(){
-        fetch('/topbreakingnews')
+        fetch('/topallcategories')
         .then(res => res.json())
         .then(data => data.forEach(element => {
             

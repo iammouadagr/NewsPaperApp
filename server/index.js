@@ -10,6 +10,7 @@ const businessApi = require("./models/businessCategory");
 const sportsApi = require('./models/sportsCategory');
 const entertainmentApi = require('./models/entertainmentCategory');
 const healthApi = require('./models/healthCategory');
+const allCategoriesApi = require('./models/allCategories')
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.disable('etag');
@@ -192,6 +193,42 @@ app.get('/tophealth',(req,res)=> {
     healthApi.load();
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "health" order by publishedAt DESC limit 1 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/allcategories',(req,res)=> {
+
+    //Loading from API
+    allCategoriesApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "none" order by publishedAt DESC  ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/topallcategories',(req,res)=> {
+
+    //Loading from API
+    allCategoriesApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "none" order by publishedAt DESC limit 1 ';
     db.query(query,(err,result) =>{
         if(err) {
             console.error('Error fetching data: ' + err.stack);

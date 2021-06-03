@@ -9,7 +9,7 @@ import HeadlineEntertainment from './HeadlineEntertainment'
 const HeadLineSection = () => {
     return (
         <div className="head-line-section">
-            <div className="container-fluid paddding mb-5">
+            <div className="container-fluid mt-40 mb-50">
                 <div className="row mx-0">
                     <div className="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn">
                         <HeadlineMainSection />
