@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
+import HeadLineSection from './HeadLineSection'
+import ReactDOM from 'react-dom';
 
-const Home = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
+
+export class Home extends Component {
+
+    render() {
+        return (
+            <>
+                <HeadLineSection />
+            </>
+        )
+    }
 }
 
+ReactDOM.render(<Home/>, document.getElementById('main-content'));
 export default Home
+
+
+

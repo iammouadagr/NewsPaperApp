@@ -7,7 +7,6 @@ import Entertainment from './components/Entertainment';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
 import { Route, Switch } from 'react-router';
-import HeadLineSection from './components/HeadLineSection'
 
 
 function App() {
@@ -25,8 +24,8 @@ function App() {
         </Switch>
       </Navigation>
 
-
-      <HeadLineSection />
+     
+      
 
       
       
