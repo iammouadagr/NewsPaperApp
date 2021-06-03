@@ -48,7 +48,7 @@ app.get('/business',(req,res)=> {
 
     businessApi.load();
 
-    let query ='SELECT * FROM article WHERE category LIKE "business" ';
+    let query ='SELECT * FROM article WHERE category LIKE "business" ORDER BY publishedAt DESC ';
     db.query(query,(err,result) =>{
         if(err) {
             console.error('Error fetching data: ' + err.stack);
@@ -64,7 +64,7 @@ app.get('/sports',(req,res)=> {
 
     sportsApi.load();
 
-    let query ='SELECT * FROM article WHERE category LIKE "sports" ';
+    let query ='SELECT * FROM article WHERE category LIKE "sports" ORDER BY publishedAt DESC';
     db.query(query,(err,result) =>{
         if(err) {
             console.error('Error fetching data: ' + err.stack);
@@ -80,7 +80,7 @@ app.get('/entertainment',(req,res)=> {
 
     entertainmentApi.load();
 
-    let query ='SELECT * FROM article WHERE category LIKE "entertainment" ';
+    let query ='SELECT * FROM article WHERE category LIKE "entertainment" ORDER BY publishedAt DESC ';
     db.query(query,(err,result) =>{
         if(err) {
             console.error('Error fetching data: ' + err.stack);
@@ -96,7 +96,7 @@ app.get('/health',(req,res)=> {
 
     healthApi.load();
 
-    let query ='SELECT * FROM article WHERE category LIKE "health" ';
+    let query ='SELECT * FROM article WHERE category LIKE "health" ORDER BY publishedAt DESC';
     db.query(query,(err,result) =>{
         if(err) {
             console.error('Error fetching data: ' + err.stack);
