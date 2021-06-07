@@ -241,6 +241,24 @@ app.get('/topallcategories',(req,res)=> {
 
 });
 
+app.get('/healthMostPopular',(req,res)=> {
+
+    //Loading from API
+    healthApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "health" order by publishedAt DESC limit 4 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
 
 
 //Port

@@ -1,0 +1,45 @@
+.a {
+  color: inherit;
+  display: inline-block;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #444444;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+}
+.post-wrap {
+  flex-flow: row;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f1f1f1;
+}
+.post-wrap .image-section {
+  flex: 0 0 124px;
+  margin-bottom: 0;
+}
+.post-wrap .content {
+  width: auto;
+}
+.most-popular-title {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+}
+.most-popular-date {
+  margin-top: 5px;
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 16px;
+  display: block;
+  float: left;
+  margin-left: 15px;
+}

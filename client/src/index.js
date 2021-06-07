@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router} from 'react-router-dom';
+import { ContentProvider } from './Data/ContentProvider';
+import reducer,{initialState} from './Data/reducer';
 
 /*ReactDOM.render(
   <React.StrictMode>
@@ -13,9 +15,11 @@ import { BrowserRouter as Router} from 'react-router-dom';
 );*/
 ReactDOM.render(
   <Router>
+    <ContentProvider initialState={initialState} reducer={reducer}>
       <App/>
+    </ContentProvider>
   </Router>,
-  document.getElementById('header')
+  document.getElementById('main-content')
 );
 
 

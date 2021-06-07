@@ -1,0 +1,36 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #444444;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.post-source-date .content {
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 16px;
+  display: inline-block;
+  color: #222;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.breadcrumb {
+  margin-left: 85px;
+  background-color: transparent;
+}
+.breadcrumb-item > i {
+  color: #b6b6b6;
+}
+.breadcrumb-item > a {
+  margin-left: 5px;
+  color: #b6b6b6;
+}
+.breadcrumb-item > a:hover {
+  color: #00c8fa;
+  text-decoration: none;
+}
