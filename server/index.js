@@ -94,7 +94,12 @@ app.get('/sports',(req,res)=> {
 
 app.get('/entertainment',(req,res)=> {
 
+    // loading api
     entertainmentApi.load();
+
+    //pagination
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
 
     let query ='SELECT * FROM article WHERE category LIKE "entertainment" ORDER BY publishedAt DESC ';
     db.query(query,(err,result) =>{
@@ -102,7 +107,8 @@ app.get('/entertainment',(req,res)=> {
             console.error('Error fetching data: ' + err.stack);
         }else {
             console.log("Data fetched ");
-            res.json(result);
+            const paginatedResults = Pagination.pagination(page,limit,result);
+            res.json(paginatedResults);
             
         }
     });

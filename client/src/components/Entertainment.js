@@ -14,9 +14,9 @@ export class Entertainment extends Component {
     componentDidMount(){
 
         //API allArticles
-        fetch('/entertainment')
+        fetch('/entertainment?page=1&limit=11')
         .then(res => res.json())
-        .then(data => this.setState({articles: data}))
+        .then(result => this.setState({articles: result.data}))
         .then(console.log('Entertainment news fetched'));
 
         //API Headline
