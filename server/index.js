@@ -295,6 +295,24 @@ app.get('/businessMostPopular',(req,res)=> {
 
 });
 
+app.get('/entertainmentMostPopular',(req,res)=> {
+
+    //Loading from API
+    entertainmentApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "entertainment" order by publishedAt DESC limit 4 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
 
 
 //Port
