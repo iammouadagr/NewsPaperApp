@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../style/headLineSection.css'
+
 export class HeadlineMainSection extends Component {
 
     

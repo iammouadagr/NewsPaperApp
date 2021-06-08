@@ -26,8 +26,6 @@ const load = () => {
                     element.content,
                     category);
                 
-                   // console.log(newArticle);
-                   console.log(newArticle.source);
 
                 let query = 'INSERT INTO article(source,author,title,description,url,urlToImage,publishedAt,content,category) VALUES (?,?,?,?,?,?,?,?,?)';
                 let values = [newArticle.source,

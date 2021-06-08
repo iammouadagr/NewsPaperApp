@@ -14,9 +14,9 @@ export class Business extends Component {
     componentDidMount(){
 
         //API allArticles
-        fetch('/business')
+        fetch('/business?page=1&limit=11')
         .then(res => res.json())
-        .then(data => this.setState({articles: data}))
+        .then(result => this.setState({articles: result.data}))
         .then(console.log('Business news fetched'));
 
         //API Headline
@@ -48,7 +48,7 @@ export class Business extends Component {
                         <div>
                             <div className="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">News</div>
                         </div>
-                       
+                        
                          { this.state.articles.map(singleNews=>{
                                             return  <ArticleOverView key={singleNews.id} item={singleNews}/>
                                         })

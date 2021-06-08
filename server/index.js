@@ -12,6 +12,10 @@ const entertainmentApi = require('./models/entertainmentCategory');
 const healthApi = require('./models/healthCategory');
 const allCategoriesApi = require('./models/allCategories')
 
+
+//Pagination
+const Pagination = require('./Utilities/Pagination');
+
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.disable('etag');
 
@@ -46,6 +50,13 @@ app.get('/breakingNews',(req, res) => {
 
 app.get('/business',(req,res)=> {
 
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
+
+    // loading API
     businessApi.load();
 
     let query ='SELECT * FROM article WHERE category LIKE "business" ORDER BY publishedAt DESC ';
@@ -54,7 +65,8 @@ app.get('/business',(req,res)=> {
             console.error('Error fetching data: ' + err.stack);
         }else {
             console.log("Data fetched ");
-            res.json(result);
+            const paginatedResults = Pagination.pagination(page,limit,result);
+            res.json(paginatedResults);
             
         }
     });
