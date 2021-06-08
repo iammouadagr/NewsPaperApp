@@ -46,7 +46,7 @@ export class App extends Component {
             <Health/>
           </Route>
           <Route exact path='/business' >
-            <Health/>
+            <Business/>
           </Route>
           <Route exact path='/sports' >
             <Sports/>

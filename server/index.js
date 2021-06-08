@@ -277,6 +277,24 @@ app.get('/sportsMostPopular',(req,res)=> {
 
 });
 
+app.get('/businessMostPopular',(req,res)=> {
+
+    //Loading from API
+    businessApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "business" order by publishedAt DESC limit 4 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
 
 
 //Port
