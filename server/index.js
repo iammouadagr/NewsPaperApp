@@ -259,6 +259,24 @@ app.get('/healthMostPopular',(req,res)=> {
 
 });
 
+app.get('/sportsMostPopular',(req,res)=> {
+
+    //Loading from API
+    sportsApi.load();
+
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "sports" order by publishedAt DESC limit 4 ';
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
 
 
 //Port
