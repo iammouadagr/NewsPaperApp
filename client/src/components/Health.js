@@ -13,20 +13,15 @@ export class Health extends Component {
             headline :[]
             
         }
-        
-        
 
     }
-
-    
-     
 
     componentDidMount(){
 
         //API allArticles
-        fetch('/health')
+        fetch('/health?page=1&limit=11')
         .then(res => res.json())
-        .then(data => this.setState({articles: data}))
+        .then(result => this.setState({articles: result.data}))
         .then(console.log('Health news fetched'));
 
         //API Headline

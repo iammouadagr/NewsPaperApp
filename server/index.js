@@ -116,7 +116,12 @@ app.get('/entertainment',(req,res)=> {
 
 app.get('/health',(req,res)=> {
 
+    //loading api
     healthApi.load();
+
+    //pagination
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
 
     let query ='SELECT * FROM article WHERE category LIKE "health" ORDER BY publishedAt DESC';
     db.query(query,(err,result) =>{
@@ -124,7 +129,8 @@ app.get('/health',(req,res)=> {
             console.error('Error fetching data: ' + err.stack);
         }else {
             console.log("Data fetched ");
-            res.json(result);
+            const paginatedResults = Pagination.pagination(page,limit,result);
+            res.json(paginatedResults);
             
         }
     });
