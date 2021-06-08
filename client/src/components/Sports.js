@@ -14,9 +14,9 @@ export class Sports extends Component {
     componentDidMount(){
 
         //API allArticles
-        fetch('/sports')
+        fetch('/sports?page=1&limit=11')
         .then(res => res.json())
-        .then(data => this.setState({articles: data}))
+        .then(result => this.setState({articles: result.data}))
         .then(console.log('Sports news fetched'));
 
         //API Headline

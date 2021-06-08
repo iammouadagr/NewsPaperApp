@@ -50,12 +50,10 @@ app.get('/breakingNews',(req, res) => {
 
 app.get('/business',(req,res)=> {
 
+    //pagination 
     const page = parseInt(req.query.page);
     const limit = parseInt(req.query.limit);
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-
-
+    
     // loading API
     businessApi.load();
 
@@ -74,7 +72,12 @@ app.get('/business',(req,res)=> {
 
 app.get('/sports',(req,res)=> {
 
+    // loading api
     sportsApi.load();
+
+    //pagination 
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
 
     let query ='SELECT * FROM article WHERE category LIKE "sports" ORDER BY publishedAt DESC';
     db.query(query,(err,result) =>{
@@ -82,7 +85,8 @@ app.get('/sports',(req,res)=> {
             console.error('Error fetching data: ' + err.stack);
         }else {
             console.log("Data fetched ");
-            res.json(result);
+            const paginatedResults = Pagination.pagination(page,limit,result);
+            res.json(paginatedResults);
             
         }
     });
