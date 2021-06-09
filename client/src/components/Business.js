@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 import ArticleOverView from './ArticleOverView';
 import MostPopular from './MostPopular';
+import '../style/pagination.css'
+import BusinessNews from '../components/BusinessNews'
+import Pagination from '@material-ui/lab/Pagination';
 export class Business extends Component {
 
     constructor(){
         super();
         this.state = {
             articles: [],
-            headline :[]
+            headline :[],
+            page : 1
         }
     }
 
-    componentDidMount(){
+    handleChange = (event, value) => {
+        this.setState({page : value})
+    };
 
-        //API allArticles
-        fetch('/business?page=1&limit=11')
-        .then(res => res.json())
-        .then(result => this.setState({articles: result.data}))
-        .then(console.log('Business news fetched'));
+    componentDidMount(){
 
         //API Headline
         fetch('/topbusiness')
@@ -49,11 +51,14 @@ export class Business extends Component {
                             <div className="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">News</div>
                         </div>
                         
-                         { this.state.articles.map(singleNews=>{
-                                            return  <ArticleOverView key={singleNews.id} item={singleNews}/>
-                                        })
-                        }
-                      
+                         <BusinessNews key ={this.state.page} page={this.state.page}/>
+                              
+                        <div className="page-pagination">
+
+                            <Pagination color="standard" count={10} page={this.state.page} onChange={this.handleChange}/>
+
+
+                        </div>
                        
                     </div>
                     <MostPopular category ="business" />

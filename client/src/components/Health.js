@@ -21,16 +21,11 @@ export class Health extends Component {
 
 
     handleChange = (event, value) => {
-    this.setState({page : value})
+        this.setState({page : value})
     };
 
-   
-
-    
 
     componentDidMount(){
-
-        
 
         //API Headline
         fetch('/tophealth')
