@@ -6,9 +6,9 @@ const HeaderTop = () => {
         <div className="container">
             <div className="row">
                 <div className="col-lg ">
-                    <a href="#" className=" color_fff disabled fh5co_mediya_setting " >
+                    <span  className=" color_fff disabled fh5co_mediya_setting " >
                         <i className="fa fa-clock-o"></i>&nbsp;&nbsp;&nbsp;Friday, 5 January 2021
-                    </a>
+                    </span>
                    
                 </div>
                 <div className="col-12 col-md-9 align-self-center fh5co_mediya_right">

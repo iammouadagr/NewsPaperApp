@@ -32,7 +32,7 @@ class BreakingNewsHeader extends Component {
                             <div className ="row">
                                 <div className="col-12">
                                     <div className="breaking-news-wrapper ">
-                                        <h5 href="#" className="breaking-news-title float-left">Breaking news</h5>
+                                        <h5 className="breaking-news-title float-left">Breaking news</h5>
                                         <NewsTicker
                                             rowHeight = {20}
                                             maxRows = {1}
@@ -46,6 +46,7 @@ class BreakingNewsHeader extends Component {
                                             >
                                                 { this.state.BreakingNews.map(singleNews=>{
                                                             return <BreakingNews key ={singleNews.id}
+                                                            id ={singleNews.id}
                                                             title ={singleNews.title} 
                                                             url ={singleNews.url}  />
                                                        })
