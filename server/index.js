@@ -341,6 +341,96 @@ app.get('/entertainmentMostPopular',(req,res)=> {
 
 });
 
+app.get('/breakingNews/:id',(req,res)=> {
+    
+    let query ='SELECT * FROM nabaatv.article WHERE id ='+req.params.id;
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/health/:id',(req,res)=> {
+    
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "health" AND id ='+req.params.id;
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/sports/:id',(req,res)=> {
+    
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "sports" AND id ='+req.params.id;
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/entertainment/:id',(req,res)=> {
+    
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "entertainment" AND id ='+req.params.id;
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/business/:id',(req,res)=> {
+    
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "business" AND id ='+req.params.id;
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
+app.get('/allcategories/:id',(req,res)=> {
+    
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "none" AND id ='+req.params.id;
+    db.query(query,(err,result) =>{
+        if(err) {
+            console.error('Error fetching data: ' + err.stack);
+        }else {
+            console.log("Data fetched ");
+            res.json(result);
+            
+        }
+    });
+
+});
+
 
 
 //Port
