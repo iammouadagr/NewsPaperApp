@@ -7,6 +7,7 @@ import Health from './components/Health';
 import Entertainment from './components/Entertainment';
 import Home from './components/Home';
 import Navigation from './components/Navigation';
+import ArticleDetails from './components/ArticleDetails'
 import { Route, Switch } from 'react-router';
 import {useData} from  './Data/ContentProvider'
 
@@ -18,19 +19,6 @@ export class App extends Component {
     }
   }
 
-
-  getContent() {
-    switch (this.state.selectedPge) {
-      case "home":
-        return <Home />
-      
-      case "health":
-          return <Health />
-    
-      default:
-        break;
-    }
-  }
   render() {
     return (
       <div className='App'>
@@ -53,6 +41,9 @@ export class App extends Component {
           </Route>
           <Route exact path='/entertainment' >
             <Entertainment/>
+          </Route>
+          <Route path='/health/:id'>
+            <ArticleDetails category="health"/>
           </Route>
         </Switch>
 
