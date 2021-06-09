@@ -14,7 +14,7 @@ const allCategoriesApi = require('./models/allCategories')
 
 
 //Pagination
-const Pagination = require('./Utilities/Pagination');
+const Pagination = require('./utilities/Pagination');
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.disable('etag');

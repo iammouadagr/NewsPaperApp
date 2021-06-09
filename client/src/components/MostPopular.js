@@ -35,9 +35,7 @@ export class MostPopular extends Component {
                     </div>
                     {this.state.articles.map(singleArticle =>{
                         return (
-                            <div className="row post-wrap pb-3">
-                                
-                            
+                            <div key={singleArticle.id} className="row post-wrap pb-3">
                                 
                                 <div className="col-5 image-section align-self-center">
                                     <img src={singleArticle.urlToImage} alt="img" class="fh5co_most_trading"/>
