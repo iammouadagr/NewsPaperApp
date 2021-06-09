@@ -51,7 +51,7 @@ export class Business extends Component {
                             <div className="fh5co_heading fh5co_heading_border_bottom py-2 mb-4">News</div>
                         </div>
                         
-                         <BusinessNews key ={this.state.page} page={this.state.page}/>
+                        <BusinessNews key ={this.state.page} page={this.state.page}/>
                               
                         <div className="page-pagination">
 
