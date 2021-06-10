@@ -44,7 +44,7 @@ h6 {
 .article-medium > img {
   height: 250px;
   width: 100%;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .article-large .content {
@@ -56,6 +56,8 @@ h6 {
   left: 1%;
   padding: 0 20px;
   max-height: 25%;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10rem rgba(0, 0, 0.2);
 }
 
 .article-medium .content {
@@ -67,6 +69,8 @@ h6 {
   left: 1%;
   padding: 0 10px;
   max-height: 35%;
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10rem rgba(0, 0, 0.2);
 }
 
 .article-large .content .font {
