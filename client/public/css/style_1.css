@@ -1,3 +1,7 @@
+.text-center {
+  text-align: center;
+}
+
 .menu-container {
   position: relative;
   margin-left: auto;

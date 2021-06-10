@@ -13,7 +13,8 @@ export class Health extends Component {
         this.state = {
             articles: [],
             headline :[],
-            page : 1
+            page : 1,
+            length :1
             
         }
 
@@ -32,6 +33,11 @@ export class Health extends Component {
         .then(res => res.json())
         .then(data => this.setState({headline:data}))
         .then(console.log('Health headline fetched'));
+
+        fetch('/health?page='+this.state.page+'&limit=11')
+        .then(res => res.json())
+        .then(result => this.setState({length: result.suppData.numberOfPages}))
+        
   
     }
 
@@ -69,7 +75,7 @@ export class Health extends Component {
                               
                                 <div className="page-pagination">
 
-                                    <Pagination color="standard" count={10} page={this.state.page} onChange={this.handleChange}/>
+                                    <Pagination color="standard" count={this.state.length} page={this.state.page} onChange={this.handleChange}/>
 
 
                                 </div>

@@ -44,6 +44,7 @@ h6 {
 .article-medium > img {
   height: 250px;
   width: 100%;
+  opacity: 0.8;
 }
 
 .article-large .content {
@@ -54,7 +55,7 @@ h6 {
   top: 75%;
   left: 1%;
   padding: 0 20px;
-  max-height: 20%;
+  max-height: 25%;
 }
 
 .article-medium .content {

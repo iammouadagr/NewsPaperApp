@@ -28,7 +28,7 @@ function pagination(page,limit,model){
 
         results.suppData ={
             length : model.length,
-            numberOfPages : parseInt(model.length/11)
+            numberOfPages : parseInt(model.length/11)+1
         }
 
         results.data = model.slice(startIndex,endIndex);
