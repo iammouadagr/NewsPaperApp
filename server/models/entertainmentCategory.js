@@ -8,9 +8,9 @@ const apiKey = "e310ae04b4b244a5892a2ed4b35766a7";
 
 
 
-const load = () => {
+const load = (sortBy) => {
    
-    fetch("https://newsapi.org/v2/top-headlines?country=ma&category="+category+"&apiKey="+apiKey)
+    fetch("https://newsapi.org/v2/top-headlines?country=ma&category="+category+"&apiKey="+apiKey+"&sortBy="+sortBy)
         .then(res => res.json())
         .then(data => {
             let i=0;

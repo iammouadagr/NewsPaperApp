@@ -55,7 +55,7 @@ app.get('/business',(req,res)=> {
     const limit = parseInt(req.query.limit);
     
     // loading API
-    businessApi.load();
+    businessApi.load("publishedAt");
 
     let query ='SELECT * FROM article WHERE category LIKE "business" ORDER BY publishedAt DESC ';
     db.query(query,(err,result) =>{
@@ -73,7 +73,7 @@ app.get('/business',(req,res)=> {
 app.get('/sports',(req,res)=> {
 
     // loading api
-    sportsApi.load();
+    sportsApi.load("publishedAt");
 
     //pagination 
     const page = parseInt(req.query.page);
@@ -95,7 +95,7 @@ app.get('/sports',(req,res)=> {
 app.get('/entertainment',(req,res)=> {
 
     // loading api
-    entertainmentApi.load();
+    entertainmentApi.load("publishedAt");
 
     //pagination
     const page = parseInt(req.query.page);
@@ -117,7 +117,7 @@ app.get('/entertainment',(req,res)=> {
 app.get('/health',(req,res)=> {
 
     //loading api
-    healthApi.load();
+    healthApi.load("publishedAt");
 
     //pagination
     const page = parseInt(req.query.page);
@@ -160,7 +160,7 @@ app.get('/topbreakingnews',(req,res)=> {
 app.get('/topbusiness',(req,res)=> {
 
     //Loading from API
-    businessApi.load();
+    businessApi.load("publishedAt");
     
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "business" order by publishedAt DESC limit 1 ';
@@ -180,7 +180,7 @@ app.get('/topsports',(req,res)=> {
 
     //Loading from API
     
-    sportsApi.load();
+    sportsApi.load("publishedAt");
     
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "sports" order by publishedAt DESC limit 1 ';
@@ -199,7 +199,7 @@ app.get('/topsports',(req,res)=> {
 app.get('/topentertainment',(req,res)=> {
 
     //Loading from API
-    entertainmentApi.load();
+    entertainmentApi.load("publishedAt");
 
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "entertainment" order by publishedAt DESC limit 1 ';
@@ -218,7 +218,7 @@ app.get('/topentertainment',(req,res)=> {
 app.get('/tophealth',(req,res)=> {
 
     //Loading from API
-    healthApi.load();
+    healthApi.load("publishedAt");
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "health" order by publishedAt DESC limit 1 ';
     db.query(query,(err,result) =>{
@@ -272,9 +272,9 @@ app.get('/topallcategories',(req,res)=> {
 app.get('/healthMostPopular',(req,res)=> {
 
     //Loading from API
-    healthApi.load();
+    healthApi.load("popularity");
 
-    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "health" order by publishedAt DESC limit 4 ';
+    let query ='SELECT * FROM nabaatv.article WHERE category LIKE "health" order by id DESC limit 4 ';
     db.query(query,(err,result) =>{
         if(err) {
             console.error('Error fetching data: ' + err.stack);
@@ -290,7 +290,7 @@ app.get('/healthMostPopular',(req,res)=> {
 app.get('/sportsMostPopular',(req,res)=> {
 
     //Loading from API
-    sportsApi.load();
+    sportsApi.load("popularity");
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "sports" order by publishedAt DESC limit 4 ';
     db.query(query,(err,result) =>{
@@ -308,7 +308,7 @@ app.get('/sportsMostPopular',(req,res)=> {
 app.get('/businessMostPopular',(req,res)=> {
 
     //Loading from API
-    businessApi.load();
+    businessApi.load("popularity");
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "business" order by publishedAt DESC limit 4 ';
     db.query(query,(err,result) =>{
@@ -326,7 +326,7 @@ app.get('/businessMostPopular',(req,res)=> {
 app.get('/entertainmentMostPopular',(req,res)=> {
 
     //Loading from API
-    entertainmentApi.load();
+    entertainmentApi.load("popularity");
 
     let query ='SELECT * FROM nabaatv.article WHERE category LIKE "entertainment" order by publishedAt DESC limit 4 ';
     db.query(query,(err,result) =>{
