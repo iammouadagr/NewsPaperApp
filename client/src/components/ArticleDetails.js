@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from 'react'
-import  { useParams } from "react-router-dom";
-
+import  { useParams } from "react-router-dom"
+import  '../style/style.css'
+ 
 
 
 const ArticleDetails = (props) => {
@@ -27,8 +28,31 @@ const ArticleDetails = (props) => {
         <div>
            <span>article : {id}</span>
            <p>category : {category}</p>
-           source : {article.source}
-            
+           
+           <div class="row pb-4">
+                <div class="col-md-5">
+                    <div class="fh5co_hover_news_img">
+                        <div class="fh5co_news_img"><img src={article.urlToImage} alt="img"/></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="col-md-7 post-content animate-box fadeInUp animated-fast">
+                    <h4>
+                        <p  class="fh5co_magna py-2"> {article.title}</p> 
+                    </h4>
+                    <div className="post-source-date py-3">
+                        <i className="fa fa-user"></i>
+                        <span className="content">{article.source}</span>
+                        <i className="fa fa-clock-o"></i>
+                        <span className="content">April 18,2016</span>
+                    </div>
+                    <div class="fh5co_consectetur">
+                        <p>
+                        {article.description}.
+                        </p> 
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

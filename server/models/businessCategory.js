@@ -15,6 +15,10 @@ const load = () => {
         .then(data => {
             
             data.articles.forEach(element => {
+
+                if(element.urlToImage == null){
+                    element.urlToImage = 'https://nabaatv.com/wp-content/uploads/2021/01/NABAA-TV-LOGO1.png'
+                }
                 
                 let newArticle = new Article(element.source.name,
                     element.author,

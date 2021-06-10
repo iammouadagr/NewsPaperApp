@@ -462,7 +462,6 @@ a:hover {
   box-shadow: inset 0 2px 3px 1px;
 }
 .fh5co_video_news_bg {
-  background-image: url(../images/video-news-bg.jpg);
   background-size: cover;
 }
 .fh5co_small_post_heading_1 {
@@ -758,7 +757,6 @@ a:hover {
   border-color: #f5bc04;
 }
 .contact_us_bg_img {
-  background: url(../images/photo-1449157291145-7efd050a4d0e-578x362.jpg);
   padding: 100px 0;
   background-size: cover;
 }
