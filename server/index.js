@@ -341,7 +341,7 @@ app.get('/entertainmentMostPopular',(req,res)=> {
 
 });
 
-app.get('/breakingNews/:id',(req,res)=> {
+app.get('/breakingNews-:id',(req,res)=> {
     
     let query ='SELECT * FROM nabaatv.article WHERE id ='+req.params.id;
     db.query(query,(err,result) =>{

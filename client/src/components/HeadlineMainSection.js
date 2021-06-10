@@ -35,7 +35,7 @@ export class HeadlineMainSection extends Component {
                        <i className="fa fa-clock-o"></i>&nbsp;&nbsp;{Date.parse(this.state.topNews.publishedAt)}
                     </div>
                     <div className="">
-                        <a className="article-large link" href={"allcategories/"+this.state.topNews.id}>{this.state.topNews.title}</a>
+                        <a className="article-large link" href={"/allcategories-"+this.state.topNews.id}>{this.state.topNews.title}</a>
                     </div>
                 </div>
             </div>

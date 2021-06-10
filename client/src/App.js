@@ -46,27 +46,27 @@ export class App extends Component {
             <Entertainment/>
           </Route>
 
-          <Route  path='/breakingNews/:id'>
+          <Route exact path='/breakingNews-:id'>
             <ArticleDetails  category="breakingNews"/>
           </Route>
 
-          <Route  path='/health/:id'>
+          <Route exact path='/health-:id'>
             <ArticleDetails category="health"/>
           </Route>
 
-          <Route  path='/sports/:id'>
+          <Route exact path='/sports-:id'>
             <ArticleDetails category="sports"/>
           </Route>
 
-          <Route  path='/business/:id'>
+          <Route exact path='/business-:id'>
             <ArticleDetails category="business"/>
           </Route>
 
-          <Route  path='/entertainment/:id'>
+          <Route exact path='/entertainment-:id'>
             <ArticleDetails category="entertainment"/>
           </Route>
 
-          <Route  path='/allcategories/:id'>
+          <Route exact path='/allcategories-:id'>
             <ArticleDetails category="allcategories"/>
           </Route>
 

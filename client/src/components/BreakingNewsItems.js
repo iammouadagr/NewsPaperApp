@@ -16,7 +16,7 @@ export class BreakingNewsItems extends Component {
     
     render() {
         return (
-                <a href={"/breakingNews/"+this.state.item.id}>{this.state.item.title}</a>
+                <a href={"/breakingNews-"+this.state.item.id}>{this.state.item.title}</a>
                         )
 
     }

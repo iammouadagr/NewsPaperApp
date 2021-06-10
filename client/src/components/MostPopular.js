@@ -42,7 +42,7 @@ export class MostPopular extends Component {
                                 </div>
                                 <div className="col-7 paddding">
                                     <h5 className="most-popular-title">
-                                        <a href={singleArticle.url}> {singleArticle.title}.</a>
+                                        <a href={"/"+singleArticle.category+"-"+singleArticle.id}> {singleArticle.title}.</a>
                                     </h5>
                                     <span className="most-popular-date"> 
                                     <i className="fa fa-clock-o"></i>

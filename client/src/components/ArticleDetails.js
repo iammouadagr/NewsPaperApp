@@ -25,15 +25,12 @@ const ArticleDetails = (props) => {
     }, [id,category,article])
 
     return (
-        <div>
-           <span>article : {id}</span>
-           <p>category : {category}</p>
-           
+        
            <div className="row pb-4">
                 <div className="col-md-5">
                     <div className="fh5co_hover_news_img">
                         <div className="fh5co_news_img"><img src={article.urlToImage} alt="img"/></div>
-                        <div></div>
+                        
                     </div>
                 </div>
                 <div className="col-md-7 post-content animate-box fadeInUp animated-fast">
@@ -50,10 +47,12 @@ const ArticleDetails = (props) => {
                         <p>
                         {article.description}.
                         </p> 
+                        <span>article : {id}</span>
+                         <p>category : {category}</p>
                     </div>
                 </div>
             </div>
-        </div>
+       
     )
 }
 

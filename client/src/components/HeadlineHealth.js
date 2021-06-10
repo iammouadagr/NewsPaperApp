@@ -27,7 +27,7 @@ export class HeadlineHealth extends Component {
                     <i className="fa fa-clock-o"></i>&nbsp;&nbsp;Oct28,2017
                 </div>
                 <div className="">
-                    <a className="article-medium link" href={"/health/"+this.state.topNews.id}>{this.state.topNews.title}</a>
+                    <a className="article-medium link" href={"/health-"+this.state.topNews.id}>{this.state.topNews.title}</a>
                 </div>
             </div>
     </div>
