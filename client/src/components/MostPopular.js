@@ -38,7 +38,7 @@ export class MostPopular extends Component {
                             <div key={singleArticle.id} className="row post-wrap pb-3">
                                 
                                 <div className="col-5 image-section align-self-center">
-                                    <img src={singleArticle.urlToImage} alt="img" class="fh5co_most_trading"/>
+                                    <img src={singleArticle.urlToImage} alt="img" className="fh5co_most_trading"/>
                                 </div>
                                 <div className="col-7 paddding">
                                     <h5 className="most-popular-title">

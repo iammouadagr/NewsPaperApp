@@ -9,16 +9,16 @@ export class ArticleOverView extends Component {
     }
     render() {
         return (
-            <div class="row pb-4">
-                <div class="col-md-5">
-                    <div class="fh5co_hover_news_img">
-                        <div class="fh5co_news_img"><img src={this.state.article.urlToImage} alt="img"/></div>
+            <div className="row pb-4">
+                <div className="col-md-5">
+                    <div className="fh5co_hover_news_img">
+                        <div className="fh5co_news_img"><img src={this.state.article.urlToImage} alt="img"/></div>
                         <div></div>
                     </div>
                 </div>
-                <div class="col-md-7 post-content animate-box fadeInUp animated-fast">
+                <div className="col-md-7 post-content animate-box fadeInUp animated-fast">
                     <h4>
-                        <a href={"/"+this.state.article.category+"/"+this.state.article.id} class="fh5co_magna py-2"> {this.state.article.title}</a> 
+                        <a href={"/"+this.state.article.category+"/"+this.state.article.id} className="fh5co_magna py-2"> {this.state.article.title}</a> 
                     </h4>
                     <div className="post-source-date py-3">
                         <i className="fa fa-user"></i>
@@ -26,7 +26,7 @@ export class ArticleOverView extends Component {
                         <i className="fa fa-clock-o"></i>
                         <span className="content">April 18,2016</span>
                     </div>
-                    <div class="fh5co_consectetur">
+                    <div className="fh5co_consectetur">
                         <p>
                         {this.state.article.description}.
                         </p> 

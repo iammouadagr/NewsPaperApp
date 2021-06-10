@@ -67,8 +67,7 @@ class BreakingNewsHeader extends Component {
             );
         }
         else {
-            return() =>
-        (<div> no news</div>)
+            return (<div> no news</div>)
                 
             
         }
